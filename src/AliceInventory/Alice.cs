@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
+
 namespace AliceInventory
 {
     // Alice.cs
@@ -29,5 +30,7 @@ namespace AliceInventory
         {
             return "Hello!";
         }
+
+
     }
 }
