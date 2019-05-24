@@ -42,7 +42,7 @@ namespace AliceInventory.Controllers
                 Response = new Response()
                 {
                     Buttons = new Button[] {
-                    new Button() {Title = "Помощь", Payload = "", Url = null, Hide = false},
+                    new Button() {Title = "Помощь", Payload = "", Url = null, Hide = true},
                 },
                 },
                 Session = request.Session,
@@ -51,8 +51,8 @@ namespace AliceInventory.Controllers
 
             if (request.Session.New)
             {
-                response1.Response.Text = "Приветствую!";
-                response1.Response.Tts = "Приветствую!";
+                response1.Response.Text = "Здравствуй!\n Данный навык предназначен для работы со списками предметов. Просто скажи, что ты хочешь добавить в список, и я сделаю это за тебя.";
+                response1.Response.Tts = "Здравствуй!";
                 return response1;
             }
 
