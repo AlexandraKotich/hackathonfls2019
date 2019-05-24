@@ -36,8 +36,29 @@ namespace AliceInventory.Controllers
         [Route("alice")]
         public ActionResult<AliceResponse> Post([FromBody] AliceRequest request)
         {
-            var response = new AliceResponse()
+            var response1 = new AliceResponse()
             {
+                /* payload -  request json который отправляется нам при нажатии на кнопку*/
+                Response = new Response()
+                {
+                    Buttons = new Button[] {
+                    new Button() {Title = "Помощь", Payload = "", Url = null, Hide = false},
+                },
+                },
+                Session = request.Session,
+                Version = request.Version
+            };
+
+            if (request.Session.New)
+            {
+                response1.Response.Text = "Приветствую!";
+                response1.Response.Tts = "Приветствую!";
+                return response1;
+            }
+
+            var response = new AliceResponse()
+                {
+                
                 Response = new Response()
                 {
                     Text = request.Request.Command
